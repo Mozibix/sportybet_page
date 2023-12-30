@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./colors";
+@import "./variables";
+
+/* 
+FONTS 
+
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif; 
+
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.special_font {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* NAV STYLES */
+
+.nav {
+  background: $nav_bg;
+
+  &_inner {
+    @include flex_center();
+    justify-content: space-between;
+  }
+}
