@@ -48,7 +48,7 @@
 /* BUTTON VARIABLES */
 .btn_main {
   text-transform: capitalize;
-  background: #1b1e25;
+  background: #0d9737;
   color: #fff;
   padding: 0.5rem 1.5rem;
   border-radius: 5px;
@@ -62,6 +62,12 @@
 .btn_main:hover {
   scale: 1.1;
   font-weight: 700;
+}
+.btn_main.nav_btn {
+  outline: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
 }
 
 /* 
@@ -96,10 +102,31 @@ h6,
 /* NAV STYLES */
 .nav {
   background: #e41827;
+  color: #fff;
 }
 .nav_inner {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+}
+.nav_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_logo img {
+  width: 15rem;
+}
+.nav_actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.nav_actions p {
+  font-weight: 600;
+  text-decoration: underline;
+  text-transform: capitalize;
 }/*# sourceMappingURL=styles.css.map */

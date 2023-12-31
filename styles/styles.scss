@@ -36,9 +36,29 @@ h6,
 
 .nav {
   background: $nav_bg;
+  color: $white;
 
   &_inner {
     @include flex_center();
     justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &_logo {
+    @include flex_center();
+    img {
+      width: 15rem;
+    }
+  }
+
+  &_actions {
+    @include flex_center();
+    gap: 1rem;
+
+    p {
+      font-weight: 600;
+      text-decoration: underline;
+      text-transform: capitalize;
+    }
   }
 }
