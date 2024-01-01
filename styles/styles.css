@@ -1,4 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/* MEDIA SCREEN
+
+    @media screen and (max-width: 400px) {
+
+    }
+      @media screen and (min-width: 576px) {
+
+    }
+      @media screen and (min-width: 768px) {
+
+    }
+      @media screen and (min-width: 992px) {
+
+    }
+      @media screen and (min-width: 1200px) {
+
+    }
+*/
 /* MIXINS */
 /* CONTAINER */
 .main_container {
@@ -120,10 +138,15 @@ h6,
   width: 15rem;
 }
 .nav_actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   gap: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .nav_actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .nav_actions p {
   font-weight: 600;

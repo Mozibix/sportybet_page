@@ -52,8 +52,11 @@ h6,
   }
 
   &_actions {
-    @include flex_center();
+    display: none;
     gap: 1rem;
+    @media screen and (min-width: 992px) {
+      @include flex_center();
+    }
 
     p {
       font-weight: 600;
