@@ -64,4 +64,16 @@ h6,
       text-transform: capitalize;
     }
   }
+
+  .toogle_btn {
+    display: block;
+    img {
+      width: 2rem;
+      aspect-ratio: 1/1;
+    }
+
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
 }

@@ -152,4 +152,16 @@ h6,
   font-weight: 600;
   text-decoration: underline;
   text-transform: capitalize;
+}
+.nav .toogle_btn {
+  display: block;
+}
+.nav .toogle_btn img {
+  width: 2rem;
+  aspect-ratio: 1/1;
+}
+@media screen and (min-width: 992px) {
+  .nav .toogle_btn {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */
