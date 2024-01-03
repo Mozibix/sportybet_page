@@ -121,6 +121,7 @@ h6,
 .nav {
   background: #e41827;
   color: #fff;
+  width: 100%;
 }
 .nav_inner {
   display: flex;
@@ -133,9 +134,16 @@ h6,
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start;
 }
 .nav_logo img {
-  width: 15rem;
+  width: 45%;
+}
+@media screen and (min-width: 992px) {
+  .nav_logo img {
+    width: 100%;
+    max-width: 15rem;
+  }
 }
 .nav_actions {
   display: none;

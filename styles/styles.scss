@@ -37,6 +37,7 @@ h6,
 .nav {
   background: $nav_bg;
   color: $white;
+  width: 100%;
 
   &_inner {
     @include flex_center();
@@ -46,8 +47,14 @@ h6,
 
   &_logo {
     @include flex_center();
+    justify-content: flex-start;
     img {
-      width: 15rem;
+      width: 45%;
+
+      @media screen and (min-width: 992px) {
+        width: 100%;
+        max-width: 15rem;
+      }
     }
   }
 
