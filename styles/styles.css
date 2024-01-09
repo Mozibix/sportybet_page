@@ -133,6 +133,7 @@ a {
   background: #e41827;
   color: #fff;
   width: 100%;
+  /* NAV DOWN */
 }
 .nav_inner {
   display: flex;
@@ -140,6 +141,9 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
 }
 .nav_logo {
   display: flex;
@@ -183,4 +187,66 @@ a {
   .nav .toogle_btn {
     display: none;
   }
+}
+.nav_down {
+  overflow-x: scroll;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+  display: none;
+}
+.nav_down::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .nav_down {
+    display: block;
+  }
+}
+.nav_down_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 1200px) {
+  .nav_down_inner {
+    justify-content: center;
+  }
+}
+.nav_down_inner li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 5rem;
+  padding: 0 1rem;
+  height: 2.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  transform: skewX(-6deg);
+}
+.nav_down_inner li:hover {
+  transform: scale(1.1);
+}
+@media screen and (min-width: 1200px) {
+  .nav_down_inner li {
+    min-width: 7rem;
+    height: 4rem;
+  }
+}
+.nav_down_inner li:hover, .nav_down_inner li.active {
+  background: #fff;
+  color: #e41827;
+  transform: skewX(-6deg);
 }/*# sourceMappingURL=styles.css.map */
