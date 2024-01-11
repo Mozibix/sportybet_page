@@ -154,28 +154,36 @@ a {
     }
   }
 
+  /* NAV BOTTOM */
   &_bottom {
     width: 100%;
-    max-width: 90vw;
+    max-width: 98vw;
     margin: 0 auto;
     padding: 0.5rem 1rem;
 
     &_inner {
       @include flex_center();
       justify-content: flex-start;
+      gap: 0.5rem;
+      width: 100%;
       max-width: 100%;
+      height: 3rem;
       padding: 0 1rem;
+      overflow: scroll;
 
-      @media screen and (min-width: 1200px) {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media screen and (min-width: 1400px) {
         justify-content: center;
       }
 
       li {
         position: relative;
         @include flex_center();
-        padding: 0 1rem;
-        width: fit-content;
-        min-width: 5rem;
+        justify-content: flex-start;
+        min-width: fit-content;
         padding: 0 1rem;
         height: 2.5rem;
         text-transform: capitalize;
@@ -209,26 +217,166 @@ a {
   }
 }
 
-.hover-underline-animation {
-  position: relative;
-  color: $black;
-  text-decoration: none;
-}
+/* HERO SEC */
 
-.hover-underline-animation::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: $nav_bg;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
+.hero {
+  &_sec {
+    background: $hero_bg;
+    position: relative;
+    height: 100%;
+    z-index: 0;
+    overflow-y: hidden;
+    padding: 1rem 0;
 
-.hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    @media screen and (min-width: 576px) {
+      padding: 0;
+      height: 35dvh;
+    }
+  }
+
+  &_banner {
+    position: absolute;
+    z-index: -1;
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    &:last-child {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &_inner {
+    @include flex_center();
+    flex-direction: column;
+    color: $white;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+    @media screen and (min-width: 576px) {
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    @media screen and (min-width: 992px) {
+      justify-content: center;
+    }
+
+    img {
+      display: none;
+      width: 100%;
+      height: 35dvh;
+      z-index: 0;
+      @media screen and (min-width: 992px) {
+        display: block;
+        max-width: 28rem;
+      }
+      @media screen and (min-width: 1200px) {
+        max-width: fit-content;
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      line-height: 2.5rem;
+      font-style: italic;
+    }
+  }
+
+  &_left {
+    height: 100%;
+    width: 90vw;
+    padding: 0.5rem;
+
+    @media screen and (min-width: 576px) {
+      width: 100%;
+      min-width: 16rem;
+      max-width: fit-content;
+    }
+
+    ul {
+      li {
+        border-top: 1px solid rgba(234, 236, 239, 0.3);
+        padding: 0.5rem 0.6rem;
+        font-size: 1rem;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include hover_animate();
+
+        span {
+          display: block;
+          font-weight: 800;
+          color: $primary;
+          font-size: 1.2rem;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &_right {
+    height: 100%;
+
+    &_inner {
+      padding: 0.5rem;
+
+      p {
+        border-left: 5px solid $light_primary;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.17;
+        color: $light_primary;
+        padding: 0 0.5rem;
+      }
+    }
+
+    &_input {
+      display: grid;
+      place-content: center;
+      margin-top: 1rem;
+      gap: 0.5rem;
+      & > div {
+        width: 100%;
+        height: 2rem;
+        padding: 0.5rem;
+        @include flex_center();
+        gap: 0.5rem;
+        background: $white;
+        color: $black;
+        border-radius: 0.3rem;
+
+        span {
+          font-size: 0.8rem;
+        }
+        input {
+          background: transparent;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    button {
+      padding: 0.6rem;
+      background: $primary;
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 500;
+      @include hover_animate();
+      border: none;
+      outline: none;
+      border-radius: 0.3rem;
+      text-transform: capitalize;
+      scale: 0.98;
+      &:hover {
+        font-weight: 600;
+        scale: 1;
+      }
+    }
+  }
 }
