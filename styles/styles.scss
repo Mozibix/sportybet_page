@@ -171,6 +171,7 @@ a {
       }
 
       li {
+        position: relative;
         @include flex_center();
         padding: 0 1rem;
         width: fit-content;
@@ -204,50 +205,6 @@ a {
           transform-origin: bottom left;
         }
       }
-
-      /* ul.nav_bottom_inner {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-li {
-  @include flex_center();
-  padding: 0 1rem;
-  width: fit-content;
-  min-width: 5rem;
-  padding: 0 1rem;
-  height: 2.5rem;
-  text-transform: capitalize;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  @include hover_animate();
-  color: $black;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: $nav_bg;
-    transform-origin: bottom right;
-    transition: all 0.5s ease-in-out;
-  }
-
-  &:hover::after,
-  &.active::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-}
- */
     }
   }
 }
