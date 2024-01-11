@@ -118,7 +118,6 @@ a {
     &_inner {
       @include flex_center();
       justify-content: flex-start;
-
       max-width: 100%;
       padding: 0 1rem;
 
@@ -154,4 +153,125 @@ a {
       }
     }
   }
+
+  &_bottom {
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+
+    &_inner {
+      @include flex_center();
+      justify-content: flex-start;
+      max-width: 100%;
+      padding: 0 1rem;
+
+      @media screen and (min-width: 1200px) {
+        justify-content: center;
+      }
+
+      li {
+        @include flex_center();
+        padding: 0 1rem;
+        width: fit-content;
+        min-width: 5rem;
+        padding: 0 1rem;
+        height: 2.5rem;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        @include hover_animate();
+        color: $black;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $nav_bg;
+          transform-origin: bottom right;
+          transition: all 0.5s ease-in-out;
+        }
+
+        &:hover::after,
+        &.active::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+
+      /* ul.nav_bottom_inner {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  @include flex_center();
+  padding: 0 1rem;
+  width: fit-content;
+  min-width: 5rem;
+  padding: 0 1rem;
+  height: 2.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  @include hover_animate();
+  color: $black;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $nav_bg;
+    transform-origin: bottom right;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover::after,
+  &.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+ */
+    }
+  }
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: $black;
+  text-decoration: none;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $nav_bg;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
