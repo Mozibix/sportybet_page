@@ -88,6 +88,10 @@
   font-size: 1.1rem;
 }
 
+.light_bg {
+  background: #eaecef;
+}
+
 /* 
 FONTS 
 
@@ -483,4 +487,16 @@ a {
 .hero_right button:hover {
   font-weight: 600;
   scale: 1;
+}
+
+/* BANNER SEC */
+.banner_sec {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .banner_sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }/*# sourceMappingURL=styles.css.map */
