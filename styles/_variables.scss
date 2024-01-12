@@ -94,3 +94,12 @@
 .light_bg {
   background: $light_bg;
 }
+
+/* GREEN SPAN */
+.green_span {
+  display: block;
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+  background: $primary;
+  border-radius: 50%;
+}
