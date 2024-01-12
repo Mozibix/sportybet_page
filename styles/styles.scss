@@ -298,7 +298,7 @@ a {
 
     ul {
       li {
-        border-top: 1px solid rgba(234, 236, 239, 0.3);
+        border-top: 1px solid $light_border;
         padding: 0.5rem 0.6rem;
         font-size: 1rem;
         text-transform: capitalize;
@@ -387,6 +387,123 @@ a {
     display: none;
     @media screen and (min-width: 1024px) {
       @include flex_center();
+    }
+  }
+}
+
+/* TABLE SECTION */
+.table {
+  &_sec {
+    width: 100%;
+  }
+
+  &_inner {
+    @include flex_center();
+  }
+
+  &_left {
+    width: 100%;
+    max-width: fit-content;
+    border: 1px solid $table_border;
+    background: $white;
+
+    &_inner {
+      padding: 1rem 0.5rem;
+    }
+
+    &_top {
+      &_top {
+        @include flex_center();
+        justify-content: space-between;
+        gap: 1rem;
+
+        & > div {
+          @include flex_center();
+          gap: 1rem;
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+
+        ul {
+          @include flex_center();
+          gap: 1rem;
+
+          li {
+            @include flex_center();
+            gap: 0.3rem;
+            text-transform: capitalize;
+
+            img {
+              width: 0.9rem;
+              aspect-ratio: 1/1;
+            }
+          }
+        }
+      }
+
+      &_bottom {
+        margin-top: 1rem;
+        ul {
+          @include flex_center();
+          justify-content: flex-start;
+          gap: 0.5rem;
+          width: 100%;
+          max-width: 100%;
+          height: 3rem;
+          padding: 0 1rem;
+          overflow: scroll;
+          border-bottom: 1px solid $light_bg;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          @media screen and (min-width: 1400px) {
+            justify-content: center;
+          }
+
+          li {
+            position: relative;
+            @include flex_center();
+            gap: 0.5rem;
+            min-width: fit-content;
+            padding: 0 1rem;
+            height: 2.6rem;
+            text-transform: capitalize;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            @include hover_animate();
+            color: $black;
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 4px;
+              bottom: 0;
+              left: 0;
+              background-color: $primary;
+              transform-origin: bottom right;
+              transition: all 0.5s ease-in-out;
+            }
+
+            &:hover::after,
+            &.active::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+
+            img {
+              width: 0.9rem;
+              aspect-ratio: 1/1;
+            }
+          }
+        }
+      }
     }
   }
 }
