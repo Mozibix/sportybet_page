@@ -453,7 +453,6 @@ a {
           height: 3rem;
           padding: 0 1rem;
           overflow: scroll;
-          border-bottom: 1px solid $light_bg;
 
           &::-webkit-scrollbar {
             display: none;
@@ -501,6 +500,52 @@ a {
               width: 0.9rem;
               aspect-ratio: 1/1;
             }
+          }
+        }
+      }
+    }
+
+    &_middle {
+      border-top: 1px solid $light_bg;
+      border-bottom: 1px solid $light_bg;
+
+      &_inner {
+        @include flex_center();
+        justify-content: flex-start;
+        padding: 1rem;
+        gap: 1rem;
+
+        li {
+          width: 9rem;
+          height: 4.5rem;
+          padding: 0.5rem;
+          padding-right: 0;
+          background: $lighter_bg;
+          text-transform: capitalize;
+          display: grid;
+          gap: 0.2rem;
+          border-radius: 0.3rem;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          scale: 1;
+          outline: 1px solid $light_bg;
+
+          &:hover,
+          &.active {
+            scale: 1.1;
+            outline: 2px solid $primary;
+          }
+
+          span {
+            font-size: 1rem;
+            color: $lighter_text;
+            font-weight: 300;
+          }
+
+          p {
+            color: $black;
+            font-weight: 700;
+            font-size: 1.1rem;
           }
         }
       }
