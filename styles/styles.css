@@ -513,6 +513,7 @@ a {
 /* TABLE SECTION */
 .table_sec {
   width: 100%;
+  padding: 1rem 0;
 }
 .table_inner {
   display: flex;
@@ -521,13 +522,19 @@ a {
 }
 .table_left {
   width: 100%;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
+  max-width: 55rem;
   border: 1px solid #b4b4b4;
   background: #fff;
+  overflow: scroll;
+}
+.table_left::-webkit-scrollbar {
+  display: none;
 }
 .table_left_inner {
   padding: 1rem 0.5rem;
+  width: 100%;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 .table_left_top_top {
   display: flex;
@@ -667,4 +674,143 @@ a {
   color: #000;
   font-weight: 700;
   font-size: 1.1rem;
+}
+.table_left_bottom_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 0.5rem;
+}
+.table_left_bottom_nav p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  text-transform: capitalize;
+  color: #353a45;
+  min-width: 27rem;
+}
+.table_left_bottom_nav > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table_left_bottom_nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  margin-right: 4rem;
+}
+.table_left_bottom_nav ul:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  position: relative;
+  inset: 0 1rem;
+}
+.table_left_bottom_nav ul li {
+  font-size: 0.9rem;
+  color: #afafb6;
+  font-weight: 600;
+  pointer-events: none;
+  text-transform: capitalize;
+}
+.table_left_bottom_details_inner {
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.table_left_bottom_details_left {
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: grid;
+  gap: 0.2rem;
+  min-width: 6.5rem;
+}
+.table_left_bottom_details_left p {
+  color: #353a45;
+}
+.table_left_bottom_details_left span {
+  color: #d8d8d8;
+}
+.table_left_bottom_details_right_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+.table_left_bottom_details_right_inner p {
+  text-transform: capitalize;
+  color: #353a45;
+  font-weight: 300;
+  font-size: 0.9rem;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.table_left_bottom_details_right_inner > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table_left_bottom_details_right_inner > div img {
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+  margin-right: 1rem;
+}
+.table_left_bottom_details_right_inner > div .odds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.table_left_bottom_details_right_inner > div .odds ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 0.2rem;
+}
+.table_left_bottom_details_right_inner > div .odds ul li {
+  background: #0d9737;
+  color: #fff;
+  height: 2rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  gap: 0.5rem;
+}
+.table_left_bottom_details_right_inner > div .odds ul li:nth-child(2) {
+  border-inline: 1px solid #f7f7f7;
+}
+.table_left_bottom_details_right_inner > div .odds ul li span {
+  rotate: 90deg;
+  font-weight: 800;
+}
+.table_left_bottom_details_right_inner > div .points {
+  margin-left: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.table_left_bottom_details_right_inner > div .points span {
+  display: block;
+  font-weight: 800;
+  color: #0d9737;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */
