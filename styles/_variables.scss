@@ -102,4 +102,14 @@
   aspect-ratio: 1/1;
   background: $primary;
   border-radius: 50%;
+
+  &.dark_mode {
+    background: $light_primary;
+  }
+}
+
+/* TEXT VARIABLES */
+
+.primary_text {
+  color: $primary;
 }
