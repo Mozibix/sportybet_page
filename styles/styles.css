@@ -100,6 +100,14 @@
   background: #0d9737;
   border-radius: 50%;
 }
+.green_span.dark_mode {
+  background: #33ea6a;
+}
+
+/* TEXT VARIABLES */
+.primary_text {
+  color: #0d9737;
+}
 
 /* 
 FONTS 
@@ -516,63 +524,71 @@ a {
   padding: 1rem 0;
 }
 .table_inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
 }
-.table_left {
+.table_main {
   width: 100%;
-  max-width: 55rem;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   border: 1px solid #b4b4b4;
   background: #fff;
   overflow: scroll;
 }
-.table_left::-webkit-scrollbar {
+.table_main::-webkit-scrollbar {
   display: none;
 }
-.table_left_inner {
+.table_main.dark_mode {
+  background: #1b1e25;
+  color: #fff;
+}
+.table_main.dark_mode p {
+  color: #fff !important;
+}
+.table_main_inner {
   padding: 1rem 0.5rem;
   width: 100%;
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
-.table_left_top_top {
+.table_main_top_top {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
-.table_left_top_top > div {
+.table_main_top_top > div {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.table_left_top_top > div h3 {
+.table_main_top_top > div h3 {
   font-size: 1.5rem;
 }
-.table_left_top_top ul {
+.table_main_top_top ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.table_left_top_top ul li {
+.table_main_top_top ul li {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.3rem;
   text-transform: capitalize;
 }
-.table_left_top_top ul li img {
+.table_main_top_top ul li img {
   width: 0.9rem;
   aspect-ratio: 1/1;
 }
-.table_left_top_bottom {
+.table_main_top_bottom {
   margin-top: 1rem;
 }
-.table_left_top_bottom ul {
+.table_main_top_bottom ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -584,15 +600,15 @@ a {
   padding: 0 1rem;
   overflow: scroll;
 }
-.table_left_top_bottom ul::-webkit-scrollbar {
+.table_main_top_bottom ul::-webkit-scrollbar {
   display: none;
 }
 @media screen and (min-width: 1400px) {
-  .table_left_top_bottom ul {
+  .table_main_top_bottom ul {
     justify-content: center;
   }
 }
-.table_left_top_bottom ul li {
+.table_main_top_bottom ul li {
   position: relative;
   display: flex;
   justify-content: center;
@@ -609,12 +625,11 @@ a {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: #000;
 }
-.table_left_top_bottom ul li:hover {
+.table_main_top_bottom ul li:hover {
   transform: scale(1.1);
 }
-.table_left_top_bottom ul li::after {
+.table_main_top_bottom ul li::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -626,19 +641,19 @@ a {
   transform-origin: bottom right;
   transition: all 0.5s ease-in-out;
 }
-.table_left_top_bottom ul li:hover::after, .table_left_top_bottom ul li.active::after {
+.table_main_top_bottom ul li:hover::after, .table_main_top_bottom ul li.active::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.table_left_top_bottom ul li img {
+.table_main_top_bottom ul li img {
   width: 0.9rem;
   aspect-ratio: 1/1;
 }
-.table_left_middle {
+.table_main_middle {
   border-top: 1px solid #eaecef;
   border-bottom: 1px solid #eaecef;
 }
-.table_left_middle_inner {
+.table_main_middle_inner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -646,7 +661,7 @@ a {
   padding: 1rem;
   gap: 1rem;
 }
-.table_left_middle_inner li {
+.table_main_middle_inner li {
   width: 9rem;
   height: 4.5rem;
   padding: 0.5rem;
@@ -661,28 +676,28 @@ a {
   scale: 1;
   outline: 1px solid #eaecef;
 }
-.table_left_middle_inner li:hover, .table_left_middle_inner li.active {
+.table_main_middle_inner li:hover, .table_main_middle_inner li.active {
   scale: 1.1;
   outline: 2px solid #0d9737;
 }
-.table_left_middle_inner li span {
+.table_main_middle_inner li span {
   font-size: 1rem;
   color: #353a45;
   font-weight: 300;
 }
-.table_left_middle_inner li p {
+.table_main_middle_inner li p {
   color: #000;
   font-weight: 700;
   font-size: 1.1rem;
 }
-.table_left_bottom_nav {
+.table_main_bottom_nav {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
   padding: 1rem 0.5rem;
 }
-.table_left_bottom_nav p {
+.table_main_bottom_nav p {
   font-size: 1.1rem;
   font-weight: 700;
   display: flex;
@@ -694,19 +709,22 @@ a {
   color: #353a45;
   min-width: 27rem;
 }
-.table_left_bottom_nav > div {
+.table_main_bottom_nav p.dark_mode {
+  color: #fff;
+}
+.table_main_bottom_nav > div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.table_left_bottom_nav ul {
+.table_main_bottom_nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
   margin-right: 4rem;
 }
-.table_left_bottom_nav ul:first-child {
+.table_main_bottom_nav ul:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -714,14 +732,14 @@ a {
   position: relative;
   inset: 0 1rem;
 }
-.table_left_bottom_nav ul li {
+.table_main_bottom_nav ul li {
   font-size: 0.9rem;
   color: #afafb6;
   font-weight: 600;
   pointer-events: none;
   text-transform: capitalize;
 }
-.table_left_bottom_details_inner {
+.table_main_bottom_details_box {
   padding: 0 0.5rem;
   display: flex;
   justify-content: center;
@@ -729,26 +747,33 @@ a {
   justify-content: flex-start;
   gap: 0.5rem;
 }
-.table_left_bottom_details_left {
+.table_main_bottom_details_left {
   font-weight: 500;
   font-size: 0.9rem;
   display: grid;
   gap: 0.2rem;
   min-width: 6.5rem;
 }
-.table_left_bottom_details_left p {
+.table_main_bottom_details_left p {
   color: #353a45;
 }
-.table_left_bottom_details_left span {
+.table_main_bottom_details_left p.dark_mode {
+  color: #fff;
+}
+.table_main_bottom_details_left span {
   color: #d8d8d8;
 }
-.table_left_bottom_details_right_inner {
+.table_main_bottom_details_right {
+  border-top: 1px solid #eaecef;
+  padding: 0.5rem 0;
+}
+.table_main_bottom_details_right_inner {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8rem;
 }
-.table_left_bottom_details_right_inner p {
+.table_main_bottom_details_right_inner p {
   text-transform: capitalize;
   color: #353a45;
   font-weight: 300;
@@ -756,30 +781,30 @@ a {
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
-.table_left_bottom_details_right_inner > div {
+.table_main_bottom_details_right_inner > div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.table_left_bottom_details_right_inner > div img {
+.table_main_bottom_details_right_inner > div img {
   width: 1.5rem;
   aspect-ratio: 1/1;
   margin-right: 1rem;
 }
-.table_left_bottom_details_right_inner > div .odds {
+.table_main_bottom_details_right_inner > div .odds {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-.table_left_bottom_details_right_inner > div .odds ul {
+.table_main_bottom_details_right_inner > div .odds ul {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   border-radius: 0.2rem;
 }
-.table_left_bottom_details_right_inner > div .odds ul li {
+.table_main_bottom_details_right_inner > div .odds ul li {
   background: #0d9737;
   color: #fff;
   height: 2rem;
@@ -789,15 +814,22 @@ a {
   align-items: center;
   font-weight: 600;
   gap: 0.5rem;
+  cursor: pointer;
+  scale: 0.98;
+  transition: all 0.3s ease-in-out;
 }
-.table_left_bottom_details_right_inner > div .odds ul li:nth-child(2) {
+.table_main_bottom_details_right_inner > div .odds ul li:hover {
+  scale: 1;
+  background: #33ea6a;
+}
+.table_main_bottom_details_right_inner > div .odds ul li:nth-child(2) {
   border-inline: 1px solid #f7f7f7;
 }
-.table_left_bottom_details_right_inner > div .odds ul li span {
+.table_main_bottom_details_right_inner > div .odds ul li span {
   rotate: 90deg;
   font-weight: 800;
 }
-.table_left_bottom_details_right_inner > div .points {
+.table_main_bottom_details_right_inner > div .points {
   margin-left: 1rem;
   font-size: 0.8rem;
   font-weight: 500;
@@ -806,7 +838,7 @@ a {
   align-items: center;
   gap: 0.5rem;
 }
-.table_left_bottom_details_right_inner > div .points span {
+.table_main_bottom_details_right_inner > div .points span {
   display: block;
   font-weight: 800;
   color: #0d9737;

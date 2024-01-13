@@ -399,17 +399,28 @@ a {
   }
 
   &_inner {
-    @include flex_center();
+    display: grid;
+    place-content: center;
+    gap: 1rem;
   }
 
-  &_left {
+  &_main {
     width: 100%;
-    max-width: 55rem;
+    max-width: fit-content;
     border: 1px solid $table_border;
     background: $white;
     overflow: scroll;
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    &.dark_mode {
+      background: $secondary;
+      color: $white;
+
+      p {
+        color: $white !important;
+      }
     }
 
     &_inner {
@@ -482,7 +493,6 @@ a {
             font-weight: 600;
             cursor: pointer;
             @include hover_animate();
-            color: $black;
 
             &::after {
               content: "";
@@ -573,6 +583,10 @@ a {
           text-transform: capitalize;
           color: $lighter_text;
           min-width: 27rem;
+
+          &.dark_mode {
+            color: $white;
+          }
         }
 
         & > div {
@@ -602,7 +616,7 @@ a {
       }
 
       &_details {
-        &_inner {
+        &_box {
           padding: 0 0.5rem;
           @include flex_center();
           justify-content: flex-start;
@@ -618,6 +632,10 @@ a {
 
           p {
             color: $lighter_text;
+
+            &.dark_mode {
+              color: $white;
+            }
           }
 
           span {
@@ -626,6 +644,9 @@ a {
         }
 
         &_right {
+          border-top: 1px solid $light_bg;
+          padding: 0.5rem 0;
+
           &_inner {
             @include flex_center();
             gap: 8rem;
@@ -663,6 +684,14 @@ a {
                     @include flex_center();
                     font-weight: 600;
                     gap: 0.5rem;
+                    cursor: pointer;
+                    scale: 0.98;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                      scale: 1;
+                      background: $light_primary;
+                    }
 
                     &:nth-child(2) {
                       border-inline: 1px solid $lighter_bg;
