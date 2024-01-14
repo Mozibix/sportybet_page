@@ -859,7 +859,7 @@ a {
   justify-content: center;
   align-items: center;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 .footer_first_inner {
@@ -910,6 +910,14 @@ a {
   text-transform: capitalize;
   font-weight: 400;
   font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.footer ul li:hover {
+  transform: scale(1.1);
+}
+.footer ul li:hover {
+  text-decoration: underline;
 }
 .footer ul li span {
   font-weight: 800;
@@ -922,12 +930,17 @@ a {
   font-size: 0.9rem;
   font-weight: 400;
 }
+.footer_fourth p span {
+  font-weight: 500;
+  text-decoration: underline;
+}
 .footer_fourth div {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
+  margin-top: 1rem;
 }
 .footer_fourth div img {
   transition: all 0.3s ease-in-out;

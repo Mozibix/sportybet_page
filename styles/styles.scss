@@ -741,7 +741,7 @@ a {
     &_inner {
       @include flex_center();
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
     }
   }
@@ -794,6 +794,11 @@ a {
       text-transform: capitalize;
       font-weight: 400;
       font-size: 0.9rem;
+      @include hover_animate();
+
+      &:hover {
+        text-decoration: underline;
+      }
 
       span {
         font-weight: 800;
@@ -808,12 +813,18 @@ a {
     p {
       font-size: 0.9rem;
       font-weight: 400;
+
+      span {
+        font-weight: 500;
+        text-decoration: underline;
+      }
     }
 
     div {
       @include flex_center();
       justify-content: flex-start;
       gap: 1rem;
+      margin-top: 1rem;
 
       img {
         @include hover_animate();
