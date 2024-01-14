@@ -845,4 +845,94 @@ a {
   font-size: 1rem;
   padding: 0;
   margin: 0;
+}
+
+.footer {
+  background: #1b1e25;
+  color: #fff;
+}
+.footer_inner {
+  padding: 2rem 1rem;
+}
+.footer_top_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer_first_inner {
+  display: grid;
+  gap: 1.5rem;
+}
+.footer_first_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer_first_top img {
+  width: 10rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.footer_first_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer_first_bottom img {
+  width: 14rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.footer_first_bottom img:last-child {
+  width: 3rem;
+}
+.footer h4 {
+  font-size: 0.9rem;
+  line-height: normal;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.footer ul {
+  display: grid;
+  gap: 1rem;
+}
+.footer ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.footer ul li span {
+  font-weight: 800;
+}
+.footer_fourth {
+  display: grid;
+  gap: 0.5rem;
+}
+.footer_fourth p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.footer_fourth div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.footer_fourth div img {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.footer_fourth div img:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=styles.css.map */

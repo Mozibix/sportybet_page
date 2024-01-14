@@ -728,3 +728,96 @@ a {
     }
   }
 }
+
+.footer {
+  background: $secondary;
+  color: $white;
+
+  &_inner {
+    padding: 2rem 1rem;
+  }
+
+  &_top {
+    &_inner {
+      @include flex_center();
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  &_first {
+    &_inner {
+      display: grid;
+      gap: 1.5rem;
+    }
+    &_top {
+      @include flex_center();
+      justify-content: flex-start;
+
+      img {
+        width: 10rem;
+        height: fit-content;
+      }
+    }
+
+    &_bottom {
+      @include flex_center();
+      gap: 0.5rem;
+
+      img {
+        width: 14rem;
+        height: fit-content;
+
+        &:last-child {
+          width: 3rem;
+        }
+      }
+    }
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    line-height: normal;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  ul {
+    display: grid;
+    gap: 1rem;
+
+    li {
+      @include flex_center();
+      justify-content: flex-start;
+      gap: 0.5rem;
+      text-transform: capitalize;
+      font-weight: 400;
+      font-size: 0.9rem;
+
+      span {
+        font-weight: 800;
+      }
+    }
+  }
+
+  &_fourth {
+    display: grid;
+    gap: 0.5rem;
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    div {
+      @include flex_center();
+      justify-content: flex-start;
+      gap: 1rem;
+
+      img {
+        @include hover_animate();
+      }
+    }
+  }
+}
