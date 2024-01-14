@@ -735,6 +735,8 @@ a {
 
   &_inner {
     padding: 2rem 1rem;
+    display: grid;
+    gap: 4rem;
   }
 
   &_top {
@@ -756,7 +758,8 @@ a {
       justify-content: flex-start;
 
       img {
-        width: 10rem;
+        width: 100%;
+        max-width: 9rem;
         height: fit-content;
       }
     }
@@ -766,7 +769,8 @@ a {
       gap: 0.5rem;
 
       img {
-        width: 14rem;
+        width: 100%;
+        max-width: 14rem;
         height: fit-content;
 
         &:last-child {
@@ -830,5 +834,40 @@ a {
         @include hover_animate();
       }
     }
+  }
+
+  /* FOOTER BOTTOM */
+
+  &_bottom {
+    &_inner {
+      @include flex_center();
+      align-items: flex-start;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+
+      p {
+        font-size: 0.9rem;
+        font-weight: 300;
+        width: 100%;
+        max-width: 25rem;
+      }
+    }
+
+    &_right,
+    &_left {
+      @include flex_center();
+      align-items: flex-start;
+      gap: 1.5rem;
+
+      img {
+        width: 2rem;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 0.8rem;
   }
 }

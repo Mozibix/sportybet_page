@@ -850,9 +850,12 @@ a {
 .footer {
   background: #1b1e25;
   color: #fff;
+  /* FOOTER BOTTOM */
 }
 .footer_inner {
   padding: 2rem 1rem;
+  display: grid;
+  gap: 4rem;
 }
 .footer_top_inner {
   display: flex;
@@ -873,7 +876,8 @@ a {
   justify-content: flex-start;
 }
 .footer_first_top img {
-  width: 10rem;
+  width: 100%;
+  max-width: 9rem;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -884,7 +888,8 @@ a {
   gap: 0.5rem;
 }
 .footer_first_bottom img {
-  width: 14rem;
+  width: 100%;
+  max-width: 14rem;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -948,4 +953,33 @@ a {
 }
 .footer_fourth div img:hover {
   transform: scale(1.1);
+}
+.footer_bottom_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.footer_bottom_inner p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  width: 100%;
+  max-width: 25rem;
+}
+.footer_bottom_right, .footer_bottom_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.footer_bottom_right img, .footer_bottom_left img {
+  width: 2rem;
+  aspect-ratio: 1/1;
+}
+.footer h5 {
+  text-align: center;
+  font-size: 0.8rem;
 }/*# sourceMappingURL=styles.css.map */
