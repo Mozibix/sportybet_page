@@ -49,6 +49,7 @@ a {
   background: $nav_bg;
   color: $white;
   width: 100%;
+  z-index: 1000;
 
   &_inner {
     @include flex_center();
@@ -57,16 +58,18 @@ a {
     width: 100%;
     max-width: 90vw;
     margin: 0 auto;
+    padding: 1rem 0.5rem;
   }
 
   &_logo {
     @include flex_center();
     justify-content: flex-start;
+
     img {
-      width: 45%;
+      width: 100%;
+      max-width: 6rem;
 
       @media screen and (min-width: 992px) {
-        width: 100%;
         max-width: 15rem;
       }
     }
@@ -156,10 +159,16 @@ a {
 
   /* NAV BOTTOM */
   &_bottom {
+    display: none;
     width: 100%;
-    max-width: 98vw;
+    max-width: 100vw;
     margin: 0 auto;
     padding: 0.5rem 1rem;
+    background: $white;
+    z-index: 100;
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
 
     &_inner {
       @include flex_center();
@@ -213,6 +222,83 @@ a {
           transform-origin: bottom left;
         }
       }
+    }
+  }
+
+  /* DROPDOWN MENU */
+
+  .dropdown_menu {
+    position: absolute;
+    top: 4.2rem;
+    z-index: 100;
+    border-radius: 1rem;
+    padding: 1.54rem 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    background: $white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    overflow: hidden;
+    right: -50rem;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media screen and (min-width: 576px) {
+      width: 300px;
+    }
+    @media screen and (max-width: 992px) {
+      position: fixed;
+    }
+
+    &.open {
+      right: 0;
+    }
+
+    ul {
+      @include flex_center();
+      flex-direction: column;
+      gap: 1rem;
+
+      li {
+        position: relative;
+        @include flex_center();
+        justify-content: flex-start;
+        min-width: fit-content;
+        padding: 0 1rem;
+        height: 2.5rem;
+        text-transform: capitalize;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        @include hover_animate();
+        color: $black;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $nav_bg;
+          transform-origin: bottom right;
+          transition: all 0.5s ease-in-out;
+        }
+
+        &:hover::after,
+        &.active::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      display: none;
     }
   }
 }
