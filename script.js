@@ -11,6 +11,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 500);
 });
 
+const toogleBtn = document.querySelector(".toogle_btn");
+const toogleImage = document.querySelector(".toogle_btn img");
+const menu = document.querySelector(".dropdown_menu");
+const menuList = document.querySelectorAll(".dropdown_menu li");
+
+toogleBtn.onclick = () => {
+  if (toogleImage.src.includes("menu.svg")) {
+    toogleImage.src = "./assets/close.svg";
+    menu.classList.add("open");
+  } else {
+    menu.classList.remove("open");
+    toogleImage.src = "./assets/menu.svg";
+  }
+};
+const isClose = () => {
+  menu.classList.remove("open");
+  toogleImage.src = "./assets/menu.svg";
+};
+
+menuList.forEach((li) => {
+  li.onclick = () => {
+    isClose();
+  };
+});
+
+document.onclick = (e) => {
+  if (!toogleBtn.contains(e.target) && !menu.contains(e.target)) {
+    isClose();
+  }
+};
+document.onscroll = (e) => {
+  if (!toogleBtn.contains(e.target) && !menu.contains(e.target)) {
+    isClose();
+  }
+};
+
 /* SCROLL FUNCTIONALITY */
 const animationUp = document.querySelectorAll(".animations_up");
 const animationDown = document.querySelectorAll(".animations_down");
@@ -67,3 +103,36 @@ for (let i = 0; i < animation.length; i++) {
 
   observer.observe(elements);
 }
+
+const scrollLogo = document.querySelector(".nav");
+const navDown = document.querySelector(".nav_down_inner");
+const navDownList = document.querySelectorAll(".nav_down_inner li");
+const navBottom = document.querySelector(".nav_bottom");
+
+const handleScroll = () => {
+  if (window.scrollY > 3) {
+    scrollLogo.style.position = "fixed";
+    navDown.style.display = "none";
+    navBottom.style.position = "fixed";
+    navBottom.style.top = "4.8rem";
+  } else {
+    scrollLogo.style.position = "relative";
+    navDown.style.display = "flex";
+    navBottom.style.position = "relative";
+    navBottom.style.top = "0";
+  }
+};
+
+window.addEventListener("scroll", handleScroll);
+
+const toggleActive = (event, parentElement) => {
+  const clickedElement = event.target;
+
+  if (clickedElement.tagName === "LI") {
+    parentElement.querySelectorAll("li").forEach((li) => {
+      li.classList.remove("active");
+    });
+
+    clickedElement.classList.add("active");
+  }
+};
