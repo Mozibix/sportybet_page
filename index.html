@@ -16,7 +16,7 @@
     </div>
     <div>
       <nav class="nav">
-        <div class="nav_inner main_container animations_left">
+        <div class="nav_inner animations_left">
           <div class="nav_logo">
             <img src="./assets/sporty_logo.png" alt="logo" />
             <img src="./assets/ng_flag.png" alt="logo" />
@@ -36,7 +36,7 @@
 
         <!-- DOWN NAV -->
         <div class="nav_down animations_up">
-          <ul class="nav_down_inner">
+          <ul onclick="toggleActive(event, this)" class="nav_down_inner">
             <li class="active">sports</li>
             <li>casino</li>
             <li>live betting</li>
@@ -49,11 +49,30 @@
             <li>GMT+1:00</li>
           </ul>
         </div>
+
+        <!--       DROPDOWN MENU       -->
+
+        <div class="dropdown_menu">
+          <ul onclick="toggleActive(event, this)" class="menu_lists">
+            <li class="active">sports</li>
+            <li>casino</li>
+            <li>live betting</li>
+            <li>instant virtuals</li>
+            <li>scheduled virtuals</li>
+            <li>jackpot</li>
+            <li>results</li>
+            <li>promotions</li>
+            <li>app</li>
+          </ul>
+        </div>
       </nav>
 
       <!-- NAV BOTTOM -->
       <div class="nav_bottom animations_up">
-        <ul class="nav_bottom_inner animations_down">
+        <ul
+          onclick="toggleActive(event, this)"
+          class="nav_bottom_inner animations_down"
+        >
           <li class="active">home</li>
           <li>football</li>
           <li>vFootball</li>
@@ -74,7 +93,7 @@
         class="hero_banner"
         src="./assets/logo_banner_left.jpg"
         alt="banner"
-      />animations_up
+      />
       <div class="hero_inner">
         <div class="hero_left animations_up">
           <h3>popular</h3>
@@ -150,7 +169,7 @@
                       </div>
                     </div>
                     <div class="table_main_top_bottom animations_down">
-                      <ul>
+                      <ul onclick="toggleActive(event, this)">
                         <li class="active">football</li>
                         <li>vFootball</li>
                         <li>BasketBall</li>
@@ -168,7 +187,10 @@
 
                 <!-- TABLE LEFT MIDDLE -->
                 <div class="table_main_middle">
-                  <ul class="table_main_middle_inner animations_left">
+                  <ul
+                    onclick="toggleActive(event, this)"
+                    class="table_main_middle_inner animations_left"
+                  >
                     <li class="active">
                       <span>mexico</span>
                       <p>liga MX, wom...</p>
@@ -515,7 +537,7 @@
                       </div>
                     </div>
                     <div class="table_main_top_bottom animations_up">
-                      <ul>
+                      <ul onclick="toggleActive(event, this)">
                         <li class="active">football</li>
                         <li>vFootball</li>
                         <li>BasketBall</li>
@@ -917,7 +939,10 @@
           </div>
         </div>
 
-        <h5>© 2024 SportyBet. All rights reserved.</h5>
+        <h5>
+          © 2024 By Dark9T &#x1F4BB; &#x1F4BB; &#x1F4BB; <br />
+          #no gree for anybody
+        </h5>
       </div>
     </footer>
   </body>
